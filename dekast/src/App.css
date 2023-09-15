@@ -1,0 +1,85 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.background {
+    background-image: url("./assets/fitness.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.background .block {
+  width: 60%;
+  height: 70%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.background .block .text {
+  width: 100%;
+  height: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.background .block .text p {
+  font-size: 65px;
+  color: #ffffff;
+}
+
+.background .block .inloggen {
+  width: 40%;
+  height: 40%;
+  border-radius: 25px;
+  margin-top: 7.5%;
+  background-color: rgba(255, 255, 255, 0.850);
+}
+
+.background .block .inloggen .text_login {
+  font-size: 30px;
+  text-align: center;
+  padding-top: 30px;
+}
+
+.background .block .inloggen .input_klantnummer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 40%;
+}
+
+.background .block .inloggen .input_klantnummer .input {
+  width: 65%;
+  height: 45%;
+  border-radius: 20px;
+  padding: 20px;
+  font-size: 20px;
+  border: 2px solid grey;
+  margin-top: 20px;
+}
+
+.background .block .inloggen .submit_block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 30%;
+}
+
+.background .block .inloggen .submit_block .submit {
+  font-size: 20px;
+  padding: 10px;
+  border-radius: 15px;
+  border: 2px solid grey;
+}
