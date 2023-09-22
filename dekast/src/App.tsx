@@ -7,44 +7,22 @@ function App() {
   const [buttonDisabled, setButtonDisabled] = useState(false);
 
   const handleReport = () => {
-    fetch(`${API_URL}Entree/Aanmelden`, {
+    fetch(`${API_URL}Entree/Aanmelden?klantnummer=${klantnummer}`, {
       method: "POST",
-      body: JSON.stringify({
-        klantnummer,
-      }),
       headers: {
         "Content-type": "application/json; charset=UTF-8",
       },
     })
       .then((response) => {
-        return new Promise((resolve) => {
-          if (response.ok) {
-            response.json().then((json) =>
-              resolve({
-                status: response.status,
-                ok: response.ok,
-                json,
-              })
-            );
-          } else {
-            resolve({
-              status: response.status,
-              ok: response.ok,
-              json: response,
-            });
-          }
-        });
-      })
-      .then((result) => {
-        const { json, ok } = result as { json: any; ok: any };
-        console.log(json);
-        if (!ok) {
+        if (response.ok) {
+          setButtonDisabled(true);
+          window.location.href = "/dashboard";
+        } else {
           setButtonDisabled(false);
         }
-        if (ok) {
-          setButtonDisabled(true);
-          window.location.href = "/loggedin";
-        }
+      })
+      .catch((error) => {
+        console.error("Error:", error);
       });
   }
 
